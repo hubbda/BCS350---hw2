@@ -15,13 +15,15 @@
 
   <?php
 
-  if (isset($_POST['txtDoc']))
+  if (isset($_POST['txtDoc'])) {
     $txtDoc = $_POST['txtDoc'];
+  }
 
+  // 1. Display text document the user entered
   echo 'The document you entered: <br>';
   echo "<br>";
   echo '<div style="border: 1px solid #000000; padding: 0.5em; inline-size: fit-content;
-        writing-mode: vertical;">'; //start of div
+        writing-mode: vertical;">'; //start of div. Puts 
   echo $txtDoc;
   echo '</div>'; //end of div
 
