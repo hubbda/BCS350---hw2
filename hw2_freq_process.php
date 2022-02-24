@@ -19,13 +19,30 @@
     $txtDoc = $_POST['txtDoc'];
   }
 
+  //2. Constant for txtDoc, that changes all lowercase letters to uppercase
+  define("TXT_TO_UPPER", strtoupper($txtDoc));
+
   // 1. Display text document the user entered
   echo 'The document you entered: <br>';
   echo "<br>";
   echo '<div style="border: 1px solid #000000; padding: 0.5em; inline-size: fit-content;
         writing-mode: vertical;">'; //start of div. Puts 
   echo $txtDoc;
-  echo '</div>'; //end of div
+  echo '</div><br>'; //end of div
+  echo "<br>";
+  echo letterCount(TXT_TO_UPPER, "A"); // test letterCount()
+
+  // 3. Define a function letterCount
+  function letterCount($str, $l) {
+    $size = strlen($str);
+    $count = 0;
+    for($i = 0; $i < $size; $i++) {
+      if($str[$i] == $l) {
+        $count++;
+      }
+    }
+    return $count;
+  }
 
   /* define("A_BASE_COST", 19.95);
   define("A_HOURS_GRANTED", 200);
